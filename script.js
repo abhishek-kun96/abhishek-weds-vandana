@@ -2,7 +2,7 @@
   'use strict';
 
   // Paste the Apps Script web app URL (ends in /exec) between the quotes. See rsvp-backend/SETUP.md.
-  var RSVP_URL = '';
+  var RSVP_URL = 'https://script.google.com/macros/s/AKfycby5vOfqc36CUKcGCEIEZIjoENEBdzomkH_xcIqYD_TqpOm36GrOtZ_g0RKcE62xA0LGNA/exec';
   var BARAAT = Date.parse('2027-02-11T17:00:00+05:30');
 
   var L = window.InviteLogic;
