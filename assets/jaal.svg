@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="120" height="180" viewBox="0 0 120 180">
+  <defs>
+    <g id="flower">
+      <g fill="#FFFDF8" stroke="#B8924A" stroke-width="0.9">
+        <ellipse cx="0" cy="-9" rx="4.4" ry="7"/>
+        <ellipse cx="0" cy="-9" rx="4.4" ry="7" transform="rotate(60)"/>
+        <ellipse cx="0" cy="-9" rx="4.4" ry="7" transform="rotate(120)"/>
+        <ellipse cx="0" cy="-9" rx="4.4" ry="7" transform="rotate(180)"/>
+        <ellipse cx="0" cy="-9" rx="4.4" ry="7" transform="rotate(240)"/>
+        <ellipse cx="0" cy="-9" rx="4.4" ry="7" transform="rotate(300)"/>
+      </g>
+      <circle r="3.4" fill="#B8924A"/>
+    </g>
+    <g id="leaf" fill="#FFFDF8" stroke="#B8924A" stroke-width="0.9">
+      <path d="M0 0C7 -9 7 -22 0 -32C-7 -22 -7 -9 0 0Z"/>
+      <path d="M0 -3V-27" fill="none"/>
+    </g>
+    <g id="bud" fill="#FFFDF8" stroke="#B8924A" stroke-width="0.9">
+      <path d="M0 -9C6 -4 6 4 0 9C-6 4 -6 -4 0 -9Z"/>
+      <circle r="1.6" fill="#B8924A" stroke="none"/>
+    </g>
+    <g id="cell">
+      <use xlink:href="#leaf" transform="rotate(38) translate(0 -15)"/>
+      <use xlink:href="#leaf" transform="rotate(142) translate(0 -15)"/>
+      <use xlink:href="#leaf" transform="rotate(218) translate(0 -15)"/>
+      <use xlink:href="#leaf" transform="rotate(322) translate(0 -15)"/>
+      <use xlink:href="#flower"/>
+    </g>
+  </defs>
+  <rect width="120" height="180" fill="#F4EEE0"/>
+  <path d="M60 0C60 30 120 50 120 90C120 130 60 150 60 180C60 150 0 130 0 90C0 50 60 30 60 0Z" fill="none" stroke="#B8924A" stroke-width="1.5"/>
+  <use xlink:href="#cell" transform="translate(60 90)"/>
+  <use xlink:href="#cell" transform="translate(0 0)"/>
+  <use xlink:href="#cell" transform="translate(120 0)"/>
+  <use xlink:href="#cell" transform="translate(0 180)"/>
+  <use xlink:href="#cell" transform="translate(120 180)"/>
+  <use xlink:href="#bud" transform="translate(60 0)"/>
+  <use xlink:href="#bud" transform="translate(60 180)"/>
+  <use xlink:href="#bud" transform="translate(0 90)"/>
+  <use xlink:href="#bud" transform="translate(120 90)"/>
+</svg>
