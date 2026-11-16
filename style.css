@@ -273,6 +273,19 @@ footer { padding-bottom: 90px; }
 .foot-names { font-size: min(11.5vw, 54px); font-size: min(11.5cqw, 54px); color: var(--maroon); }
 footer p[lang="hi"] { font-size: 20px; color: var(--gold-d); margin: 4px 0 16px; }
 
+/* ---------- Laptops and desktops ---------- */
+/* The invite is a phone-shaped column; on wide screens scale the whole column up rather than reflow it. */
+@media (min-width: 900px) {
+  main { zoom: 1.45; }
+  .medallion { width: min(340px, 42vh); height: min(340px, 42vh); }
+  .tap { font-size: 17px; padding: 12px 32px 10px; }
+  .tap span { font-size: 18px; }
+  #mute { right: 24px; bottom: 24px; width: 56px; height: 56px; }
+}
+@media (min-width: 1500px) {
+  main { zoom: 1.75; }
+}
+
 /* ---------- Reduced motion ---------- */
 @media (prefers-reduced-motion: reduce) {
   .door, .medallion, .reveal { transition-duration: .01s; transition-delay: 0s; }
