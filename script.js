@@ -40,16 +40,19 @@
   /* ----- cover ----- */
   function petals() {
     var box = document.getElementById('petals');
-    for (var i = 0; i < 22; i++) {
+    // 22 for the opening burst, then 10 slow ones that keep drifting over every page
+    for (var i = 0; i < 32; i++) {
       var p = document.createElement('i');
       p.style.left = Math.random() * 100 + '%';
       p.style.setProperty('--dx', (Math.random() * 160 - 80) + 'px');
       p.style.setProperty('--rot', (Math.random() * 720 - 360) + 'deg');
-      p.style.animationDuration = (4 + Math.random() * 4) + 's';
-      p.style.animationDelay = (Math.random() * 2.5) + 's';
+      var drift = i >= 22;
+      if (drift) p.className = 'drift';
+      p.style.animationDuration = (drift ? 11 + Math.random() * 8 : 4 + Math.random() * 4) + 's';
+      p.style.animationDelay = (drift ? 4 + Math.random() * 12 : Math.random() * 2.5) + 's';
       box.appendChild(p);
     }
-    setTimeout(function () { box.textContent = ''; }, 11000);
+    box.addEventListener('animationend', function (ev) { ev.target.remove(); });
   }
   function openInvite() {
     if (body.classList.contains('open')) return;

@@ -124,6 +124,7 @@ body.open .tap { opacity: 0; animation: none; }
   border-radius: 80% 0 80% 0;
   animation: fall linear forwards;
 }
+#petals i.drift { width: 11px; height: 14px; animation-iteration-count: infinite; }
 @keyframes fall {
   to { transform: translate3d(var(--dx), 110vh, 0) rotate(var(--rot)); opacity: .85; }
 }
@@ -205,23 +206,41 @@ a:focus-visible, button:focus-visible, input:focus-visible, #cover:focus-visible
 .tiles span { font-size: 12px; letter-spacing: .2em; text-transform: uppercase; }
 .note { margin-top: 16px; font-style: italic; font-size: 20px; color: var(--gold-d); }
 
-/* ---------- Events ---------- */
-.events { padding-top: 8px; }
-.day {
-  position: relative; margin: 0 20px 26px; padding: 34px 20px 14px;
-  background: var(--card); border: 1.5px solid var(--gold); border-radius: 120px 120px 10px 10px;
-  box-shadow: 0 8px 22px rgba(74, 42, 28, .12);
+/* ---------- Day pages ---------- */
+.dayp { padding: 26px 16px 44px; }
+.arch {
+  position: relative; overflow: hidden;
+  padding-top: 84px;
+  border: 1.5px solid var(--gold); border-radius: 999px 999px 14px 14px;
+  box-shadow: inset 0 0 0 6px var(--ivory), inset 0 0 0 7px var(--gold), 0 10px 26px rgba(74, 42, 28, .14);
 }
-.daynum { font: 400 58px/1 var(--script); color: var(--maroon); }
-.day h3 { font-size: 15px; letter-spacing: .2em; text-transform: uppercase; color: var(--gold-d); font-weight: 700; margin: 2px 0 14px; }
-.day ul { list-style: none; }
-.day li {
-  display: flex; justify-content: space-between; align-items: baseline; gap: 12px;
-  padding: 11px 4px; border-top: 1px solid rgba(184, 146, 74, .4);
-  font-size: 22px; font-weight: 600; text-align: left;
+.day1 .arch { background: linear-gradient(180deg, #FFEFC2, var(--card) 60%); }
+.day2 .arch { background: linear-gradient(180deg, #F9DDD6, var(--card) 60%); }
+/* marigold strings hanging inside the arch */
+.arch::before, .arch::after {
+  content: ''; position: absolute; top: 150px; width: 12px; height: 182px;
+  background:
+    radial-gradient(circle, #A8182E 0 6px, transparent 6.5px) center bottom / 12px 14px no-repeat,
+    radial-gradient(circle at 50% 25%, #F39A1D 0 5px, transparent 5.5px) 0 0 / 12px 24px repeat-y,
+    radial-gradient(circle at 50% 75%, #FFD23F 0 5px, transparent 5.5px) 0 0 / 12px 24px repeat-y;
 }
-.day li i { font-style: normal; font-size: 17px; font-weight: 400; color: var(--gold-d); margin-left: 6px; }
-.day time { font-size: 18px; color: var(--maroon); white-space: nowrap; }
+.arch::before { left: 22px; }
+.arch::after { right: 22px; }
+.arch .caps { font-size: 13px; letter-spacing: .3em; text-transform: uppercase; font-weight: 700; color: var(--gold-d); }
+.arch h2 { font-size: min(11vw, 46px); font-size: min(11cqw, 46px); font-weight: 400; letter-spacing: 0; margin: 6px 0 0; }
+.weekday { font-style: italic; font-size: 20px; color: var(--gold-d); }
+.arch ul { list-style: none; margin: 14px 44px 0; }
+.arch li { padding: 12px 0 10px; }
+.arch li + li { border-top: 1px solid rgba(184, 146, 74, .45); }
+.arch li b { display: block; font-size: 25px; font-weight: 700; line-height: 1.2; color: var(--maroon); }
+.arch li i { font-style: normal; font-weight: 400; font-size: 19px; color: var(--gold-d); margin-left: 4px; }
+.arch time { display: inline-block; margin-top: 4px; padding: 2px 14px; border-radius: 999px; background: var(--maroon); color: #F6DFA8; font-size: 15px; font-weight: 600; letter-spacing: .14em; }
+.at { margin-top: 12px; font-size: 14px; letter-spacing: .2em; text-transform: uppercase; font-weight: 600; color: var(--gold-d); }
+.arch img {
+  width: 100%; margin-top: 6px; mix-blend-mode: multiply;
+  -webkit-mask-image: linear-gradient(transparent, #000 7%);
+  mask-image: linear-gradient(transparent, #000 7%);
+}
 
 /* ---------- Venue ---------- */
 .venue-name { font-size: min(11.5vw, 52px); font-size: min(11.5cqw, 52px); color: var(--maroon); padding: 0 16px; }
