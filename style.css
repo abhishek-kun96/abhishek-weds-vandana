@@ -81,12 +81,7 @@ body.open .door-r { transform: rotateY(112deg); opacity: 0; }
   outline: 1px solid var(--gold); outline-offset: -8px;
   color: var(--maroon);
 }
-.medallion-in img {
-  width: 70%; mix-blend-mode: multiply;
-  -webkit-mask-image: radial-gradient(circle closest-side, #000 82%, transparent 100%);
-  mask-image: radial-gradient(circle closest-side, #000 82%, transparent 100%);
-}
-.medallion-in .om { font-size: min(5.2vw, 22px); line-height: 1.2; margin-top: 2px; }
+.medallion-in img { width: 88%; mix-blend-mode: multiply; }
 body.open .medallion { transform: translate(-50%, -50%) scale(1.25); opacity: 0; }
 
 .tap {
